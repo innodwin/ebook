@@ -162,7 +162,7 @@ export const Checkout = ({ setCheckOut }) => {
                   />
                 </div>
                 <p className="mb-4 text-2xl font-semibold text-lime-500 text-center">
-                  ${total}
+                ₦{total}
                 </p>
                 <button
                   type="submit"

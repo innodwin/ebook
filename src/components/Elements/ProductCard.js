@@ -44,7 +44,7 @@ export const ProductCard = ({product}) => {
   
               <p className="flex justify-between items-center">
                   <span className="text-2xl dark:text-gray-200">
-                      <span>$</span><span>{product.price}</span>
+                      <span>₦</span><span>{product.price}</span>
                   </span>
                   {isInCart === false ?(
                   <button onClick={handleAddToCart} className={ `inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 ${product.in_stock?"":"cursor-not-allowed"}`} disabled={product.in_stock ? "" : "disabled"}>Add To Cart <i className="ml-1 bi bi-plus-lg"></i></button>
