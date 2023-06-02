@@ -32,8 +32,8 @@ export const Login = () => {
    }
   }
   async function handleLoginGuest(){
-    emailRef.current.value = "innocentedwin25@yahoo.com";
-    passwordRef.current.value = "123456789";
+    emailRef.current.value = "dwin@yahoo.com";
+    passwordRef.current.value = "1234567";
     
     const authDetail = {
       email: emailRef.current.value,
