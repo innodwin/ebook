@@ -31,6 +31,29 @@ export const Login = () => {
     
    }
   }
+  async function handleLoginGuest(){
+    emailRef.current.value = "innocentedwin25@yahoo.com";
+    passwordRef.current.value = "123456789";
+    
+    const authDetail = {
+      email: emailRef.current.value,
+      password:  passwordRef.current.value,
+    };
+    console.log(authDetail);
+   try {
+    const data = await login(authDetail);
+    if (data.accessToken) {
+      sessionStorage.setItem("token", JSON.stringify(data.accessToken));
+      sessionStorage.setItem("cbid", JSON.stringify(data.user.id));
+      navigate("/products");
+    } else {
+      toast.error(data);
+    }
+   } catch (error) {
+    toast.error("Could not proccess user operation, try again later");
+    
+   }
+  }
   return (
     <main>
       <section>
@@ -78,7 +101,7 @@ export const Login = () => {
           Log In
         </button>
       </form>
-      {/* <button className="mt-3 cursor-pointer text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login As Guest</button> */}
+       <button onClick={handleLoginGuest} className="mt-3 cursor-pointer text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login As Guest</button> 
     </main>
   );
 };
