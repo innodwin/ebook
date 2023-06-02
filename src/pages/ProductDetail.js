@@ -62,7 +62,7 @@ export const ProductDetail = () => {
           <div className="max-w-xl my-3">
           {product.name && (
             <p className="text-3xl font-bold text-gray-900 dark:text-slate-200">
-              <span className="mr-1">$</span>
+              <span className="mr-1">₦</span>
               <span className="">{product.price}</span>
             </p>
           )}
