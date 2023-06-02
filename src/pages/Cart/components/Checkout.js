@@ -5,8 +5,6 @@ import { createOrder, getUser } from "../../../services/dataService";
 
 export const Checkout = ({ setCheckOut }) => {
   const { cartList, total, clearCart } = useCart();
-  const token = JSON.parse(sessionStorage.getItem("token"));
-  const cbid = JSON.parse(sessionStorage.getItem("cbid"));
   const [user, setUser] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {

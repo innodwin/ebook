@@ -6,7 +6,7 @@ export const Search = ({setSearch}) => {
     const searchRef = useRef();
     const handleSubmit = (event) => {
         event.preventDefault();
-        const search = event.target.search.value;
+     //  const search = event.target.search.value;
         //event.form.reset();
        // navigate(`/products?search=${search}`);
        setSearch(false);

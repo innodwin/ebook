@@ -17,7 +17,7 @@ export async function getUser() {
     requestOption
   );
   if(!response.ok){
-    throw {message:response.statusText,statusCode:response.status}; 
+    throw {message:response.statusText,statusCode:response.status}; //eslint-disable-line
   }
   const data = await response.json();
 
@@ -37,7 +37,7 @@ export async function getUserOrder() {
       
      }
     if(!response.ok){
-      throw {message:response.statusText,statusCode:response.status}; 
+      throw {message:response.statusText,statusCode:response.status}; //eslint-disable-line
     }
     const dataResponse = await response.json();
     return dataResponse;
@@ -65,7 +65,7 @@ export async function createOrder(cartList,total,user) {
       body: JSON.stringify(orderDetails),
     });
     if(!response.ok){
-      throw {message:response.statusText,statusCode:response.status}; 
+      throw {message:response.statusText,statusCode:response.status}; //eslint-disable-line
     }
      dataResponse = await response.json();
   } catch (error) {

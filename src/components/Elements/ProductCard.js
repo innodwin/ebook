@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import logo from "../../assets/images/10001.avif";
 import { Rating } from "./Rating";
 import { useCart } from "../../context";
 import { useEffect, useState } from "react";
@@ -18,7 +17,7 @@ export const ProductCard = ({product}) => {
         }else{
             setIsInCart(false);
         }
-    },[])
+    },[cartList,product.id])
     function handleRemoveCart(){
         removeFromCart(product);
         setIsInCart(!isInCart);  
@@ -47,7 +46,7 @@ export const ProductCard = ({product}) => {
                   <span className="text-2xl dark:text-gray-200">
                       <span>$</span><span>{product.price}</span>
                   </span>
-                  {isInCart == false ?(
+                  {isInCart === false ?(
                   <button onClick={handleAddToCart} className={ `inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 ${product.in_stock?"":"cursor-not-allowed"}`} disabled={product.in_stock ? "" : "disabled"}>Add To Cart <i className="ml-1 bi bi-plus-lg"></i></button>
                   ):(
                  <button onClick={handleRemoveCart} className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800">Remove Item <i className="ml-1 bi bi-trash3"></i></button> 
