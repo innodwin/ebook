@@ -4,7 +4,7 @@ function getSession(){
     return {token : token,id:cbid};
 }
 export async function getUser() {
- const {token:token, id :cbid} = getSession();
+ const {token:token, id :cbid} = getSession();//eslint-disable-line
   const requestOption = {
     method: "GET",
     headers: {
@@ -25,7 +25,7 @@ export async function getUser() {
 }
 
 export async function getUserOrder() {
-    const {token:token, id :cbid} = getSession();
+    const {token:token, id :cbid} = getSession();//eslint-disable-line
     var response = null;
      try {
       response = await fetch(`${process.env.REACT_APP_HOST}/660/orders?user.id=${cbid}`,{
@@ -54,7 +54,7 @@ export async function createOrder(cartList,total,user) {
     },
   };
   var  dataResponse = null;
-  const {token:token, id :cbid} = getSession();
+  const {token:token} = getSession();//eslint-disable-line
   try {
     const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders`, {
       method: "POST",

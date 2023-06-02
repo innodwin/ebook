@@ -4,7 +4,7 @@ import { CartPage, DashboardPage, HomePage, Login, OrderPage, PageNotFound, Prod
 import { ProtectedRoute } from './ProtectedRoute';
 
 export const AllRoutes = () => {
-  const token = false;
+
   return (
    <>
    <Routes>

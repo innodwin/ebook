@@ -23,7 +23,7 @@ export const ProductDetail = () => {
      }
     }
     fetchProduct();
-  }, []);
+  }, []);//eslint-disable-line
   useEffect(() => {
     const checkProduct = cartList.find((cart) => cart.id === product.id);
     if (checkProduct) {
