@@ -31,7 +31,7 @@ export const ProductsList = () => {
    
     }
     fetchProduct();
-  }, [searchTerm]);
+  }, [searchTerm]);//eslint-disable-line
 //  const {productList}  = useFilter();
 //  console.log(productList);
 

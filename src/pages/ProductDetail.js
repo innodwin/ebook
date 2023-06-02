@@ -31,7 +31,7 @@ export const ProductDetail = () => {
     } else {
       setIsInCart(false);
     }
-  }, [product]);
+  }, [product]);//eslint-disable-line
   function handleAdd() {
     console.log(product);
     if(product.in_stock ){
